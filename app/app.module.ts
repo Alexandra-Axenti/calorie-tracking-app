@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
 import { NewLogComponent }   from './new-log.component';
 import { LogsListComponent }   from './logs-list.component';
+import { TimingPipe } from './timing.pipe';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LogsListComponent }   from './logs-list.component';
   declarations: [
     AppComponent,
     NewLogComponent,
-    LogsListComponent
+    LogsListComponent,
+    TimingPipe
   ],
   bootstrap:    [ AppComponent ]
 })
