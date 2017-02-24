@@ -1,13 +1,16 @@
 # calorie-tracking-app
 
 
+
 == PROJECT DESCRIPTION ==
 
 The app is supposed to track meals and calories associated with each meal.
 
+
+
 -- Main Objectives --
 
-++ Log new meals: [name, description, calories]
+++ Log new meals: [name, description, time, calories]
 ++ Display/list logged meals
 ++ Pipe/filter meals based on calorie value
 ++ Edit logged meals
@@ -19,6 +22,8 @@ The app is supposed to track meals and calories associated with each meal.
 ++ Add a property that displays when a meal was consumed
 ++ Expand the application to (a) display multiple days of food logs, (b) group entries by day and (c) display the amount of total calories consumed in a days
 ++ Add a new master component to calculate the average calories consumed per day
+
+
 
 == INITIAL SET-UP ==
 
@@ -51,6 +56,19 @@ The app is supposed to track meals and calories associated with each meal.
 [14]  add, commit and push to the remote repository on GitHub to have a record of the project "blank" before starting work
 
 
+
 == MAIN DEVELOPMENT ==
 
-[15]  
+[15]  craft the architecture of the application on paper taking in consideration Main & Bonus Objectives and extra features that would integrate nicely in the project
+
+[16]  determine the minimum viable product features and starting point
+
+
+
+== NEW LOG COMPONENT ==
+
+[20]  start working on the first component /objective: [new-log]
+
+[21]  create the meal log model: log.model.ts component and give it the basic structure
+
+[22]  create the new-log component and start building the code based on previous example in task-app
