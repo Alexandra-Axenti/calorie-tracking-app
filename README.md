@@ -72,3 +72,9 @@ The app is supposed to track meals and calories associated with each meal.
 [21]  create the meal log model: log.model.ts component and give it the basic structure
 
 [22]  create the new-log component and start building the code based on previous example in task-app
+
+[23]  new-log component requires parent component [logs-list] and [app]
+
+[24]  created table structure for [new-log], add button and output service on click
+
+[25]  added logs-list tag inside [app]

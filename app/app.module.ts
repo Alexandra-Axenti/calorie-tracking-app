@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
 import { NewLogComponent }   from './new-log.component';
+import { LogsListComponent }   from './logs-list.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NewLogComponent }   from './new-log.component';
   ],
   declarations: [
     AppComponent,
-    NewLogComponent
+    NewLogComponent,
+    LogsListComponent
   ],
   bootstrap:    [ AppComponent ]
 })

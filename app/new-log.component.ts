@@ -5,37 +5,37 @@ import { Log } from './log.model';
   selector: 'new-log',
   template: `
   <h3>Add New Meal</h3>
-  <div>
-    <tr>
-      <input #newName>Name</input>
-    </tr>
-    <tr>
-      <tc>
-        <tr id="time">
-          <input #newDate>Date</input>
+    <table>
+      <tbody>
+        <tr colspan=2>
+          <input #newNamet>
         </tr>
-        <tr id="calorie">
-          <input #newCalorie>Calories</input>
+        <tr>
+          <td id="time">
+            <input #newDate>
+          </td>
+          <td id="calorie">
+            <input #newCalorie>
+          </td>
         </tr>
-      </tc>
-      <tc>
-        <input #newDescription>Description</input>
-      </tc>
-    </tr>
+        <tr rowspan=2>
+          <input #newDescription>
+        </tr>
+      </tbody>
+    </table>
     <button (click)="
       addClicked(newName.value, newDate.value, newCalorie.value, newDescription.value);
       newName.value='';
       newDate.value='';
       newCalorie.value='';
       newDescription='';
-    ">Submit</button>
-  <div>
+    ">Add Log</button>
   `
 })
 
 export class NewLogComponent {
   @Output() newTaskSender = new EventEmitter();
-  addClicked(name: string, date: number, calorie: number, description: string) {
+  addClicked(name: string, date: Date, calorie: number, description: string) {
     var newLogToAdd: Log = new Log(name, date, calorie, description);
     this.newTaskSender.emit(newLogToAdd);
   }
