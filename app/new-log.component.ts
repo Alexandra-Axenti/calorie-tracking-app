@@ -8,7 +8,7 @@ import { Log } from './log.model';
     <table>
       <tbody>
         <tr colspan=2>
-          <input #newNamet>
+          <input #newName>
         </tr>
         <tr>
           <td id="time">
