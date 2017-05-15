@@ -18,7 +18,7 @@ export class TimingPipe implements PipeTransform {
     return output;
   } else if (calorieVerify === "future") {
     for (var i = 0; i < input.length; i++) {
-      if (input[i].date.toString() > Date.now().toString()) {
+      if (input[i].date["value"]() > Date.now()) {
         output.push(input[i]);
       }
     }

@@ -5,17 +5,14 @@ import { Log } from './log.model';
   selector: 'my-app',
   template:  `
     <div class="container">
+    <h1>Calorie Tracking App</h1>
       <logs-list
         [childLogsList] = "masterLogsList"
         (clickSender) = "showDetails($event)"
       ></logs-list>
-      <edit-log
-        [childSelectedLog]="selectedLog"
-        (doneClickedSender)="finishedEditing()"
-       ></edit-log>
       <new-log
         (newLogSender)="addLog($event)"
-       ></new-log>
+       >Add Log</new-log>
     </div>
   `
 })
@@ -29,10 +26,10 @@ export class AppComponent {
   showDetails(clickedLog: Log) {
     this.selectedLog = clickedLog;
   }
-  finishedEditing() {
-    this.selectedLog = null;
-  }
-  // addLog(newLogFromChild: Log) {
-  // this.masterLogList.push(newLogFromChild);
+  // finishedEditing() {
+  //   this.selectedLog = null;
   // }
+  addLog(newLogFromChild: Log) {
+  this.masterLogsList.push(newLogFromChild);
+  }
 }
