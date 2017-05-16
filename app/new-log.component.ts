@@ -24,8 +24,8 @@ import { Log } from './log.model';
 
 export class NewLogComponent {
   @Output() newLogSender = new EventEmitter();
-  addClicked(name: string, date: Date, calorie: number, description: string) {
-    var newLogToAdd: Log = new Log(name, date, calorie, description);
+  addClicked(name: string, date: string, calorie: string, description: string) {
+    var newLogToAdd: Log = new Log(name, new Date(date), parseFloat(calorie), description);
     this.newLogSender.emit(newLogToAdd);
   }
 }
