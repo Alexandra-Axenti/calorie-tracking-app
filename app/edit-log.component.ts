@@ -4,25 +4,16 @@ import { Log } from './log.model';
 @Component ({
   selector: 'edit-log',
   template:`
-    <div *ngIf="childSelectedLog">
-      <h1>Edit Log</h1>
-      <div>
-        <label>Enter Meal:</label>
-        <input [(ngModel)]="childSelectedLog.name">
-      </div>
-      <div>
-        <label>Enter Date:</label>
-        <input [(ngModel)]="childSelectedLog.date">
-      </div>
-      <div>
-        <label>Enter Total Calories:</label>
-        <input [(ngModel)]="childSelectedLog.calorie">
-      </div>
-      <div>
-        <label>Enter Description:</label>
-        <input [(ngModel)]="childSelectedLog.description">
-      </div>
-      <button (click)="doneClicked()">Done</button>
+    <div class="log-edit" *ngIf="childSelectedLog">
+      <br>
+      <h4>Edit Log</h4>
+      <table class="logs-list">
+        <div class="col-md-2 form-item"><input class="form-control form-item input-form" [(ngModel)]="childSelectedLog.name"></div>
+        <div class="col-md-2 form-item"><input class="form-control form-item input-form" [(ngModel)]="childSelectedLog.date"></div>
+        <div class="col-md-1 form-item"><input class="form-control form-item input-form" [(ngModel)]="childSelectedLog.calorie"></div>
+        <div class="col-md-3 form-item"><textarea  id="new-log-textarea" class="form-control form-item" [(ngModel)]="childSelectedLog.description"></textarea></div>
+        <div class="col-md-2 form-item"><button class="btn btn-primary" (click)="doneClicked()">Save Edit</button></div>
+      </table>
     </div>
   `
 })

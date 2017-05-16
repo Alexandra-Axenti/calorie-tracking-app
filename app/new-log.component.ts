@@ -4,28 +4,21 @@ import { Log } from './log.model';
 @Component ({
   selector: 'new-log',
   template: `
-  <h3>Add New Meal</h3>
-    <table>
-      <div>
-        <input #newName placeholder="Meal">
-      </div>
-      <div>
-        <input #newDate placeholder="Date">
-      </div>
-      <div>
-        <input #newCalorie placeholder="Calorie count">
-      </div>
-      <div>
-        <input #newDescription placeholder="Description/comments">
-      </div>
+    <br>
+    <h4>New Log</h4>
+    <table class="add-log logs-list">
+      <div class="col-md-2 form-item"><input class="form-control form-item input-form" #newName placeholder="Meal"></div>
+      <div class="col-md-2 form-item"><input class="form-control form-item input-form" type="date" #newDate placeholder="Date"></div>
+      <div class="col-md-1 form-item"><input class="form-control form-item input-form" #newCalorie placeholder="Calorie count"></div>
+      <div class="col-md-3 form-item"><textarea id="new-log-textarea" class="form-control form-item" #newDescription placeholder="Description/comments"></textarea></div>
+      <div class="col-md-2 form-item"><button class="btn btn-primary" (click)="
+        addClicked(newName.value, newDate.value, newCalorie.value, newDescription.value);
+        newName.value='';
+        newDate.value = '';
+        newCalorie.value='';
+        newDescription.value='';
+      ">Add Log</button></div>
     </table>
-    <button (click)="
-      addClicked(newName.value, newDate.value, newCalorie.value, newDescription.value);
-      newName.value='';
-      newDate.value='';
-      newCalorie.value='';
-      newDescription.value='';
-    ">Add Log</button>
   `
 })
 

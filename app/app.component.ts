@@ -6,23 +6,30 @@ import { Log } from './log.model';
   template:  `
     <div class="container">
     <h1>Calorie Tracking App</h1>
-      <logs-list
-        [childLogsList] = "masterLogsList"
-        (clickSender) = "showDetails($event)"
-      ></logs-list>
-      <edit-log
-        (clickSender) = "showDetails($event)"
-      ></edit-log>
-      <new-log
-        (newLogSender)="addLog($event)"
-       >Add Log</new-log>
+      <div>
+        <logs-list
+          [childLogsList] = "masterLogsList"
+          (clickSender) = "showDetails($event)"
+        ></logs-list>
+        <edit-log
+          [childSelectedLog] = "selectedLog"
+          (doneClickSender) = "finishedEditing()"
+        ></edit-log>
+      </div>
+      <div>
+        <new-log
+          (newLogSender)="addLog($event)"
+        >Add Log</new-log>
+      </div>
     </div>
   `
 })
 
 export class AppComponent {
   public masterLogsList: Log[] = [
-    new Log("Vegetables", new Date(2017,2,24), 250, "I ate tomatoes and carrots for lunch")
+    new Log("Vegetables", new Date(2017,2,24), 250, "Calcium, Vitamin A, Vitamin B"),
+    new Log("Tomatoes", new Date(2017,5,16), 150, "Iron, Fito-nutrients"),
+    new Log("Steamed Fish", new Date(2017,5,15), 505, "Iron, Fito-nutrients")
   ];
 
   selectedLog: Log = null;
