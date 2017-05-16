@@ -6,10 +6,18 @@ import { Log } from './log.model';
   template: `
   <h3>Add New Meal</h3>
     <table>
-          <input #newName>
-          <input #newDate>
-          <input #newCalorie>
-          <input #newDescription>
+      <div>
+        <input #newName placeholder="Meal">
+      </div>
+      <div>
+        <input #newDate placeholder="Date">
+      </div>
+      <div>
+        <input #newCalorie placeholder="Calorie count">
+      </div>
+      <div>
+        <input #newDescription placeholder="Description/comments">
+      </div>
     </table>
     <button (click)="
       addClicked(newName.value, newDate.value, newCalorie.value, newDescription.value);

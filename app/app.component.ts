@@ -10,6 +10,9 @@ import { Log } from './log.model';
         [childLogsList] = "masterLogsList"
         (clickSender) = "showDetails($event)"
       ></logs-list>
+      <edit-log
+        (clickSender) = "showDetails($event)"
+      ></edit-log>
       <new-log
         (newLogSender)="addLog($event)"
        >Add Log</new-log>
@@ -26,9 +29,9 @@ export class AppComponent {
   showDetails(clickedLog: Log) {
     this.selectedLog = clickedLog;
   }
-  // finishedEditing() {
-  //   this.selectedLog = null;
-  // }
+  finishedEditing() {
+    this.selectedLog = null;
+  }
   addLog(newLogFromChild: Log) {
   this.masterLogsList.push(newLogFromChild);
   }

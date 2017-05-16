@@ -2,23 +2,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Log } from './log.model';
 
 @Pipe ({
-  name: 'timing',
+  name: 'calories',
   pure: false
 })
 
-export class TimingPipe implements PipeTransform {
+export class CaloriesPipe implements PipeTransform {
   transform(input: Log[], calorieVerify) {
     var output = [];
-    if (calorieVerify === "today") {
+    if (calorieVerify === "low calorie food") {
     for (var i = 0; i < input.length; i++) {
-      if (input[i].date.toString() == Date.now().toString()) {
+      if (input[i].calorie <= 500) {
         output.push(input[i]);
       }
     }
     return output;
-  } else if (calorieVerify === "future") {
+  } else if (calorieVerify === "high calorie food") {
     for (var i = 0; i < input.length; i++) {
-      if (input[i].date["value"]() > Date.now()) {
+      if (input[i].calorie > 500) {
         output.push(input[i]);
       }
     }

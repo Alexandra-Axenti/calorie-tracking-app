@@ -2,9 +2,10 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
+import { EditLogComponent }   from './edit-log.component';
 import { NewLogComponent }   from './new-log.component';
 import { LogsListComponent }   from './logs-list.component';
-import { TimingPipe } from './timing.pipe';
+import { CaloriesPipe } from './calories.pipe';
 
 
 @NgModule({
@@ -14,9 +15,10 @@ import { TimingPipe } from './timing.pipe';
   ],
   declarations: [
     AppComponent,
+    EditLogComponent,
     NewLogComponent,
     LogsListComponent,
-    TimingPipe
+    CaloriesPipe
   ],
   bootstrap:    [ AppComponent ]
 })
