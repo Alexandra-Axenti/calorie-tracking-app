@@ -14,7 +14,7 @@ import { Log } from './log.model';
       <table class="logs-list">
         <tr *ngFor="let currentLog of childLogsList | calories: selectedCalories">
           <div class="col-md-2">{{currentLog.name}}</div>
-          <div class="col-md-2">{{currentLog.date.toDateString()}}</div>
+          <div class="col-md-2">{{currentLog.date}}</div>
           <div class="col-md-1">{{currentLog.calorie}}</div>
           <div class="col-md-3">{{currentLog.description}}</div>
           <div class="col-md-2"><button class="btn btn-primary" id='edit' (click)="editButtonHasBeenClicked(currentLog)">Edit</button></div>

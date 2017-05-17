@@ -14,7 +14,6 @@ import { Log } from './log.model';
         <edit-log
           [childSelectedLog] = "selectedLog"
           (doneClickSender) = "finishedEditing()"
-          (clickOutside)="close()"
         ></edit-log>
       </div>
       <div>
@@ -30,7 +29,7 @@ export class AppComponent {
   public masterLogsList: Log[] = [
     new Log("Vegetables", new Date('2017,2,24'), 250, "Calcium, Vitamin A, Vitamin B"),
     new Log("Tomatoes", new Date('2017,5,16'), 150, "Iron, Fito-nutrients"),
-    new Log("Steamed Fish", new Date('2017,5,15'), 505, "Iron, Fito-nutrients")
+    new Log("Steamed Fish", new Date('2017,5,15'), 505, "Omega 3 and Omega 6")
   ];
 
   selectedLog: Log = null;
