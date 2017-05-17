@@ -1,3 +1,3 @@
-# calorie-tracking-app
+# CalorieTrackingApp
 
-This web app tracks meals and calories associated with each meal.
+This is a web app tracking meal calories.

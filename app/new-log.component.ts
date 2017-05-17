@@ -6,26 +6,25 @@ import { Log } from './log.model';
   template: `
     <br>
     <h4>New Log</h4>
-    <table class="add-log logs-list">
-      <div class="col-md-2 form-item"><input class="form-control form-item input-form" #newName placeholder="Meal"></div>
-      <div class="col-md-2 form-item"><input class="form-control form-item input-form" type="date" #newDate placeholder="Date"></div>
-      <div class="col-md-1 form-item"><input class="form-control form-item input-form" #newCalorie placeholder="Calorie count"></div>
-      <div class="col-md-3 form-item"><textarea id="new-log-textarea" class="form-control form-item" #newDescription placeholder="Description/comments"></textarea></div>
-      <div class="col-md-2 form-item"><button class="btn btn-primary" (click)="
-        addClicked(newName.value, newDate.value, newCalorie.value, newDescription.value);
-        newName.value='';
-        newDate.value = '';
-        newCalorie.value='';
-        newDescription.value='';
-      ">Add Log</button></div>
-    </table>
+    <form #form="ngForm" (ngSubmit)="addClicked(form.value)">
+      <table class="add-log logs-list">
+        <tr>
+          <div class="col-md-2 form-item"><input class="form-control form-item input-form" #newName placeholder="Meal"></div>
+          <div class="col-md-2 form-item"><input class="form-control form-item input-form" type="date" #newDate placeholder="Date" required></div>
+          <div class="col-md-1 form-item"><input class="form-control form-item input-form" #newCalorie placeholder="Calorie count" required></div>
+          <div class="col-md-3 form-item"><textarea id="new-log-textarea" class="form-control form-item" #newDescription placeholder="Description/comments"></textarea></div>
+          <div class="col-md-2 form-item"><button class="btn btn-primary">Add Log</button></div>
+        </tr>
+      </table>
+    </form>
   `
 })
 
 export class NewLogComponent {
   @Output() newLogSender = new EventEmitter();
-  addClicked(name: string, date: string, calorie: string, description: string) {
-    var newLogToAdd: Log = new Log(name, new Date(date), parseFloat(calorie), description);
+  addClicked(name: string, date: string, calorie: number, description: string) {
+    var newLogToAdd: Log = new Log(name, new Date(date), calorie, description);
+    debugger;
     this.newLogSender.emit(newLogToAdd);
   }
 }

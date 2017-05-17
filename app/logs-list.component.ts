@@ -6,14 +6,13 @@ import { Log } from './log.model';
   template: `
     <br><br>
     <select class="form-control select-form" (change)="onChange($event.target.value)">
-      <option value="all" selected="selected">Show All</option>
-      <option value="low calorie food">Low Calorie Food</option>
-      <option value="high calorie food">High Calorie Food</option>
+      <option class="form-control" value="all" selected="selected">Show All</option>
+      <option class="form-control" value="low calorie food">Low Calorie Food</option>
+      <option class="form-control" value="high calorie food">High Calorie Food</option>
     </select>
     <br><br><br>
-    <div *ngFor="let currentLog of childLogsList | calories: selectedCalories">
       <table class="logs-list">
-        <tr>
+        <tr *ngFor="let currentLog of childLogsList | calories: selectedCalories">
           <div class="col-md-2">{{currentLog.name}}</div>
           <div class="col-md-2">{{currentLog.date.toDateString()}}</div>
           <div class="col-md-1">{{currentLog.calorie}}</div>
@@ -21,7 +20,6 @@ import { Log } from './log.model';
           <div class="col-md-2"><button class="btn btn-primary" id='edit' (click)="editButtonHasBeenClicked(currentLog)">Edit</button></div>
         </tr>
       </table>
-    </div>
   `
 })
 

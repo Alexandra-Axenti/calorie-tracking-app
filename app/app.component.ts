@@ -14,6 +14,7 @@ import { Log } from './log.model';
         <edit-log
           [childSelectedLog] = "selectedLog"
           (doneClickSender) = "finishedEditing()"
+          (clickOutside)="close()"
         ></edit-log>
       </div>
       <div>

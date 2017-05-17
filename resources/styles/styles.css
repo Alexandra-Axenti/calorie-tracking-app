@@ -56,3 +56,7 @@ h4 {
 .select-form {
   width: 40%;
 }
+
+tr:nth-child(even) {
+  background-color: #f4f9ff;
+}
